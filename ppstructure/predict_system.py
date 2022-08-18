@@ -26,7 +26,9 @@ import json
 import time
 import logging
 from copy import deepcopy
-from attrdict import AttrDict
+
+# FIXME(chunlinxu): remove library AttrDict
+# from attrdict import AttrDict
 
 from ppocr.utils.utility import get_image_file_list, check_and_read_gif
 from ppocr.utils.logging import get_logger
@@ -35,6 +37,20 @@ from ppstructure.table.predict_table import TableSystem, to_excel
 from ppstructure.utility import parse_args, draw_structure_result
 
 logger = get_logger()
+
+
+# FIXME(chunlinxu): 增加自定义类AttrDict取代原库中的类
+class AttrDict(dict):
+    """Single level attribute dict, NOT recursive"""
+
+    def __init__(self, **kwargs):
+        super(AttrDict, self).__init__()
+        super(AttrDict, self).update(kwargs)
+
+    def __getattr__(self, key):
+        if key in self:
+            return self[key]
+        raise AttributeError("object has no attribute '{}'".format(key))
 
 
 class StructureSystem(object):

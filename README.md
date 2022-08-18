@@ -13,6 +13,14 @@ English | [简体中文](README_ch.md)
     <a href="https://github.com/PaddlePaddle/PaddleOCR/stargazers"><img src="https://img.shields.io/github/stars/PaddlePaddle/PaddleOCR?color=ccf"></a>
 </p>
 
+## BugFix
+
+Modify ppstructure.predict_system.py, remove deprecated library AttrDict.
+
+Add class AttrDict to replace the class in library AttrDict.
+
+Modify setup.py and requirements.txt to remove AttrDict and support python3.10.
+
 ## Introduction
 
 PaddleOCR aims to create multilingual, awesome, leading, and practical OCR tools that help users train better models and apply them into practice.

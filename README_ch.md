@@ -13,6 +13,14 @@
     <a href="https://github.com/PaddlePaddle/PaddleOCR/stargazers"><img src="https://img.shields.io/github/stars/PaddlePaddle/PaddleOCR?color=ccf"></a>
 </p>
 
+## BugFix
+
+修改ppstructure.predict_system.py，去除过时库AttrDict库的依赖.
+
+增加自定义的类AttrDict代替原有库中的类.
+
+修改setup.py与requirements.txt，去除AttrDict依赖并支持python3.10
+
 ## 简介
 
 PaddleOCR旨在打造一套丰富、领先、且实用的OCR工具库，助力开发者训练出更好的模型，并应用落地。
